@@ -496,15 +496,13 @@
 <p>4：为标签设置属性时，如果该属性为标签的固有属性使用prop(“ “ , “ “)方法，自定义属性使用attr(“ “ , “ “)方法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#sex&quot;</span>).children(<span class="string">&quot;option[value=&#x27;男&#x27;]&quot;</span>).prop(<span class="string">&quot;selected&quot;</span>, <span class="string">&quot;selected&quot;</span>);</span><br><span class="line">$(<span class="string">&#x27;input[name=&quot;food&quot;][value=&quot;apple&quot;]&#x27;</span>).prop(<span class="string">&quot;checked&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
 
-<p>#三：Bootstrap</p>
-<p>1：关闭Bootstrap模态框</p>
+<h1 id="三：Bootstrap"><a href="#三：Bootstrap" class="headerlink" title="三：Bootstrap"></a>三：Bootstrap</h1><p>1：关闭Bootstrap模态框</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#modal&#x27;</span>).modal(<span class="string">&#x27;hide&#x27;</span>);<span class="comment">//关闭模态框</span></span><br></pre></td></tr></table></figure>
 
 <p>2：监听Bootstrap模态框关闭事件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#modal&#x27;</span>).on(<span class="string">&#x27;hide.bs.modal&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>#四：Bootstrap-Table</p>
-<p>1：当Bootstrap-Table的分页类型设置为前端分页或不分页时，后端不需要返回total，只需要返回rows。</p>
+<h1 id="四：Bootstrap-Table"><a href="#四：Bootstrap-Table" class="headerlink" title="四：Bootstrap-Table"></a>四：Bootstrap-Table</h1><p>1：当Bootstrap-Table的分页类型设置为前端分页或不分页时，后端不需要返回total，只需要返回rows。</p>
 <p>2：Bootstrap-Table进行二次创建时需要销毁上次创建的表格，否则表格会直接保持旧表格。Bootstrap-Table销毁后表结构也会消失，并且无法被Bootstrap-Validator监听</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#table&#x27;</span>).bootstrapTable(<span class="string">&#x27;destroy&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
