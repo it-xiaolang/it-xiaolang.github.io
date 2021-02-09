@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="week1, it-xiaolang">
+    <meta name="keywords" content="ELK2.X集群部署, it-xiaolang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>week1 | it-xiaolang</title>
+    <title>ELK2.X集群部署 | it-xiaolang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">week1</h1>
+                    <h1 class="description center-align post-title">ELK2.X集群部署</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%94%B6%E8%8E%B7%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">收获总结</span>
+                            <a href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
+                                <span class="chip bg-color">集群部署</span>
+                            </a>
+                        
+                            <a href="/tags/ELK/">
+                                <span class="chip bg-color">ELK</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">日志分析</span>
                             </a>
                         
                     </div>
@@ -443,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%91%A8%E8%AE%B0/" class="post-category">
-                                周记
+                            <a href="/categories/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" class="post-category">
+                                集群部署
                             </a>
                         
                     </div>
@@ -456,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-13
+                    2020-01-15
                 </div>
                 
 
@@ -477,51 +485,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一：JavaSE"><a href="#一：JavaSE" class="headerlink" title="一：JavaSE"></a>一：JavaSE</h1><h2 id="1：BigDecimal"><a href="#1：BigDecimal" class="headerlink" title="1：BigDecimal"></a>1：BigDecimal</h2><p>（1）：在进行高精度的运算时，不能使用double或float，否则会在运算时丢失精度，需要使用BigDecimal类。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> variable1=<span class="number">123.22</span>;</span><br><span class="line"><span class="keyword">double</span> variable2=<span class="number">345.66</span>;</span><br><span class="line">BigDecimal BigDecimal1 = <span class="keyword">new</span> BigDecimal(String.valueOf(variable1));</span><br><span class="line">BigDecimal BigDecimal2 = <span class="keyword">new</span> BigDecimal(String.valueOf(variable2));</span><br><span class="line"><span class="keyword">double</span> result=BigDecimal1.add(BigDecimal2).doubleValue();</span><br></pre></td></tr></table></figure>
+                <h2 id="一：版本号"><a href="#一：版本号" class="headerlink" title="一：版本号"></a>一：版本号</h2><p>（1）本教程运行环境为jdk1.8，较低版本的ELK组件：elasticsearch-2.4.6，logstash-2.4.1，kibana-4.3.1，其中elasticsearch-2.4.6需要两个插件：elasticsearch-head，elasticsearch-kopf，elasticsearch-analysis-ik-1.10.6</p>
+<p>（2）ELK下载地址如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.elastic.co&#x2F;cn&#x2F;downloads&#x2F;past-releases</span><br></pre></td></tr></table></figure>
 
-<h2 id="2：根据场景切换业务逻辑"><a href="#2：根据场景切换业务逻辑" class="headerlink" title="2：根据场景切换业务逻辑"></a>2：根据场景切换业务逻辑</h2><p>（1）：方式一：定义一个业务接口，根据不同的需求新建业务类并实现该接口，使用@Autowired对类对象进行注入，所有的实现类对象会注入到一个列表中。然后对列表进行逻辑处理，在不同的业务场景下利用多态执行不同的实现类对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">List&lt;Food&gt; list;</span><br></pre></td></tr></table></figure>
+<p>（3）elasticsearch插件下载地址如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;mobz&#x2F;elasticsearch-head</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;lmenezes&#x2F;elasticsearch-kopf</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;medcl&#x2F;elasticsearch-analysis-ik&#x2F;releases</span><br></pre></td></tr></table></figure>
 
-<p>（2）：方式二：定义一个业务接口，根据不同的需求新建业务类并实现该接口。新建一个工厂类，并根据不同的业务场景创建不同的实现类对象并利用多态进行执行。若实现的业务类过多，可以使用配置文件，利用反射的机制进行对象的创建。反射创建的对象，不是由Spring容器管理的，所以对象中的属性无法自动注入，需要在类的构造函数中使用ApplicationContext进行手动赋值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Ext <span class="title">getInstance</span><span class="params">(String flag)</span> </span>&#123;</span><br><span class="line">		Ext ext=<span class="keyword">new</span> NullExt();</span><br><span class="line">	    <span class="keyword">try</span> &#123;</span><br><span class="line">			String classRoute=routeXmlReader.getClassRoute(flag);</span><br><span class="line">			<span class="keyword">if</span>(StringUtils.isNotBlank(classRoute)) &#123;</span><br><span class="line">				Class&lt;?&gt; extClass = Class.forName(classRoute);</span><br><span class="line">				ext = (Ext) extClass.newInstance();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			log.error(<span class="string">&quot;对象创建异常：&quot;</span>,e);</span><br><span class="line">		&#125;</span><br><span class="line">	    <span class="keyword">return</span> ext;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二：安装步骤"><a href="#二：安装步骤" class="headerlink" title="二：安装步骤"></a>二：安装步骤</h2><h3 id="1：准备"><a href="#1：准备" class="headerlink" title="1：准备"></a>1：准备</h3><p>（1）：预先准备三台CentOS7服务器，并使用root用户登录，如我的服务器的IP如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&quot;192.168.16.11&quot;,&quot;192.168.16.12&quot;,&quot;192.168.16.13&quot;]</span><br></pre></td></tr></table></figure>
 
-<h1 id="二：JQuery"><a href="#二：JQuery" class="headerlink" title="二：JQuery"></a>二：JQuery</h1><p>1：当需要Ajax已经执行完毕，才执行下一步的业务逻辑时，需要将Ajax设置为同步进行。因为当Ajax异步执行时，又可能下一步已经开始执行，但Ajax还没有执行结束。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>（2）：在三台服务器的/opt文件夹下新建module/elk文件夹，解压安装的软件集中安装到/opt/module文件夹下，如此更方便管理。</p>
+<h3 id="2：安装jdk"><a href="#2：安装jdk" class="headerlink" title="2：安装jdk"></a>2：安装jdk</h3><p>​        将jdk-8u201-linux-x64.tar.gz上传到服务器（[“192.168.16.11”,”192.168.16.12”,”192.168.16.13”]）的/opt/module/elk目录下，并使用如下命令解压，解压后配置JAVA_HOME环境变量，或者在elasticsearch和kibana的启动脚本中直接指定JAVA_HOME。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf jdk-8u201-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
 
-<p>2：当需要根据Ajax的返回结果进行逻辑判断时，需要将Ajax设置为同步执行，并在Ajax外定义一个对象，之后在回调方法中使用该对象接收Ajax的返回结果，最后在Ajax外将定义的对象返回。</p>
-<p>3：使用JavaScript触发事件时，需要使用对应的方法去触发监听</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#username&quot;</span>).trigger(<span class="string">&quot;change&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="3：安装elasticsearch"><a href="#3：安装elasticsearch" class="headerlink" title="3：安装elasticsearch"></a>3：安装elasticsearch</h3><p>（1）： 将elasticsearch-2.4.6.tar.gz上传到服务器（[“192.168.16.11”,”192.168.16.12”,”192.168.16.13”]）的/opt/module/elk目录下，并使用如下命令解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf elasticsearch-2.4.6.tar.gz</span><br></pre></td></tr></table></figure>
 
-<p>4：为标签设置属性时，如果该属性为标签的固有属性使用prop(“ “ , “ “)方法，自定义属性使用attr(“ “ , “ “)方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#sex&quot;</span>).children(<span class="string">&quot;option[value=&#x27;男&#x27;]&quot;</span>).prop(<span class="string">&quot;selected&quot;</span>, <span class="string">&quot;selected&quot;</span>);</span><br><span class="line">$(<span class="string">&#x27;input[name=&quot;food&quot;][value=&quot;apple&quot;]&#x27;</span>).prop(<span class="string">&quot;checked&quot;</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>（2）：进入解压后的elasticsearch-2.4.6文件夹，修改config/elasticsearch.yml文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cluster.name: elk-cluster #集群名称</span><br><span class="line">node.name: elk-node1 #节点名称</span><br><span class="line">path.data: &#x2F;opt&#x2F;module&#x2F;elk&#x2F;es-data #es数据存储位置</span><br><span class="line">path.logs: &#x2F;opt&#x2F;module&#x2F;elk&#x2F;es-log #es日志存储位置</span><br><span class="line">bootstrap.mlockall: true #锁定内存</span><br><span class="line">network.host: 0.0.0.0 #启用该服务器所有网卡网络访问</span><br><span class="line">http.port: 9200 #http监听端口</span><br><span class="line">discovery.zen.minimum_master_nodes: 2 #最少组成集群的节点数</span><br><span class="line">discovery.zen.ping.unicast.hosts: [&quot;192.168.16.11&quot;,&quot;192.168.16.12&quot;,&quot;192.168.16.13&quot;] #集群中具有的服务器,默认互相通信的端口为9300，如需更改直接在ip后添加端口号，例：192.168.16.11:9301</span><br></pre></td></tr></table></figure>
 
-<h1 id="三：Bootstrap"><a href="#三：Bootstrap" class="headerlink" title="三：Bootstrap"></a>三：Bootstrap</h1><p>1：关闭Bootstrap模态框</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#modal&#x27;</span>).modal(<span class="string">&#x27;hide&#x27;</span>);<span class="comment">//关闭模态框</span></span><br></pre></td></tr></table></figure>
+<p>（3）：在elasticsearch-2.4.6文件夹下新建plugins目录，将elasticsearch-head-master.zip，elasticsearch-kopf-master.zip和elasticsearch-analysis-ik-1.10.3.zip上传到plugins文件夹下，并使用如下命令进行解压，将解压后的文件夹分别重命名为head，kopf和ik。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip elasticsearch-head-master.zip</span><br><span class="line">unzip elasticsearch-kopf-master.zip</span><br><span class="line">unzip elasticsearch-analysis-ik-1.10.6.zip</span><br></pre></td></tr></table></figure>
 
-<p>2：监听Bootstrap模态框关闭事件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#modal&#x27;</span>).on(<span class="string">&#x27;hide.bs.modal&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4：安装logstash"><a href="#4：安装logstash" class="headerlink" title="4：安装logstash"></a>4：安装logstash</h3><p>（1）：logstash安装在需要进行日志采集的服务器（不是搭建elasticsearch集群的三台服务器，如Tomcat的应用服务器，为方便测试，暂时采集[“192.168.16.11”]服务器上的日志信息）上，采集的日志经过filter（可省略）处理后发送到elasticsearch集群。</p>
+<p>（2）：将logstash-2.4.1.tar.gz上传到[“192.168.16.11”]服务器的/opt/module/elk目录下，并使用如下命令解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf logstash-2.4.1.tar.gz</span><br></pre></td></tr></table></figure>
 
-<h1 id="四：Bootstrap-Table"><a href="#四：Bootstrap-Table" class="headerlink" title="四：Bootstrap-Table"></a>四：Bootstrap-Table</h1><p>1：当Bootstrap-Table的分页类型设置为前端分页或不分页时，后端不需要返回total，只需要返回rows。</p>
-<p>2：Bootstrap-Table进行二次创建时需要销毁上次创建的表格，否则表格会直接保持旧表格。Bootstrap-Table销毁后表结构也会消失，并且无法被Bootstrap-Validator监听</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#table&#x27;</span>).bootstrapTable(<span class="string">&#x27;destroy&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>（3）进入解压后的logstash-2.4.1文件夹，新建config文件夹，并在config文件夹下新建logstash.conf文件，logstash.conf文件内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">    file &#123;</span><br><span class="line">      path &#x3D;&gt; &quot;&#x2F;var&#x2F;log&#x2F;messages&quot;</span><br><span class="line">      type &#x3D;&gt; &quot;log&quot;</span><br><span class="line">      start_position &#x3D;&gt; &quot;beginning&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">    elasticsearch &#123;</span><br><span class="line">       hosts &#x3D;&gt; [&quot;192.168.16.11:9200&quot;,&quot;192.168.16.12:9200&quot;,&quot;192.168.16.13:9200&quot;]</span><br><span class="line">       index &#x3D;&gt; &quot;log-%&#123;+YYYY.MM.dd&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>3：：Bootstrap-Table数据刷新</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#table&quot;</span>).bootstrapTable(<span class="string">&#x27;refresh&#x27;</span>, <span class="string">&quot;url&quot;</span>);<span class="comment">//刷新表格数据</span></span><br></pre></td></tr></table></figure>
+<h3 id="4：安装kibana"><a href="#4：安装kibana" class="headerlink" title="4：安装kibana"></a>4：安装kibana</h3><p>（1）：将kibana-4.3.1-linux-x64.tar.gz上传到[“192.168.16.11”]服务器的/opt/module/elk目录下，并使用如下命令解压：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf kibana-4.3.1-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
 
-<h1 id="五：Bootstrap-Validator"><a href="#五：Bootstrap-Validator" class="headerlink" title="五：Bootstrap-Validator"></a>五：Bootstrap-Validator</h1><p>1：当Bootstrap-Validator提供的验证规则无法满足需要时，使用callback方法自定义验证规则。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">fieldName: &#123;</span><br><span class="line">	validators: &#123;</span><br><span class="line">            callback: &#123;</span><br><span class="line">            message: <span class="string">&#x27;验证不通过&#x27;</span>,</span><br><span class="line">            callback: <span class="function"><span class="keyword">function</span>(<span class="params">value, validator</span>) </span>&#123;</span><br><span class="line">            	<span class="keyword">var</span> flag=<span class="literal">true</span>;<span class="comment">//根据具体业务判断</span></span><br><span class="line">           		<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">           			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">           		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           			<span class="keyword">return</span> &#123;<span class="attr">valid</span>: <span class="literal">false</span>, <span class="attr">message</span>: <span class="string">&#x27;验证不通过&#x27;</span>&#125;;</span><br><span class="line">           		&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>（2）：进入解压后的kibana-4.3.1-linux-x64文件夹，修改config/kibana.yml文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server.port: 5601</span><br><span class="line">server.host: &quot;0.0.0.0&quot;</span><br><span class="line">elasticsearch.url: &quot;http:&#x2F;&#x2F;192.168.16.11:9200&quot; #三个elasticsearch服务器中的任意一个</span><br><span class="line">kibana.index: &quot;.kibana&quot;</span><br></pre></td></tr></table></figure>
 
-<p>2：Bootstrap-Validator根据标签的name进行识别，而且该标签必须要位于form-group中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;form-group&quot;</span>&gt;</span><br><span class="line">	&lt;label <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;col-sm-2 control-label&quot;</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&#x27;required&#x27;</span>&gt;</span>*<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>姓名:&lt;/label&gt;</span><br><span class="line">	&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;col-sm-4&quot;</span>&gt;</span><br><span class="line">      &lt;input type=<span class="string">&quot;text&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;form-control&quot;</span> name=<span class="string">&quot;username&quot;</span>/&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="三：集群测试"><a href="#三：集群测试" class="headerlink" title="三：集群测试"></a>三：集群测试</h2><h3 id="1：启动集群"><a href="#1：启动集群" class="headerlink" title="1：启动集群"></a>1：启动集群</h3><p>（1）：启动ES集群，分别进入[“192.168.16.11”,”192.168.16.12”,”192.168.16.13”]三台服务器的/opt/module/elk/elasticsearch-2.4.6文件夹，并分别执行如下命令。该命令强行使用root用户启动elasticsearch，elasticsearch5及其以上版本已不支持，必须使用非root用户启动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;elasticsearch -d -Des.insecure.allow.root&#x3D;true</span><br></pre></td></tr></table></figure>
 
-<p>3：Bootstrap-Validator触发验证</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#form&quot;</span>).bootstrapValidator(<span class="string">&#x27;validate&#x27;</span>);<span class="comment">//提交验证  </span></span><br><span class="line"><span class="keyword">if</span>($(<span class="string">&quot;#form&quot;</span>).data(<span class="string">&#x27;bootstrapValidator&#x27;</span>).isValid())&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）：启动logstash，进入[“192.168.16.11”]服务器的/opt/module/elk/logstash-2.4.1文件夹，并执行如下命令。该命令非后台启动，关闭服务器连接时使用exit命令，不要直接关闭窗口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;logstash -f config&#x2F;logstash.conf &amp;</span><br></pre></td></tr></table></figure>
 
-<p>4：Bootstrap-Validator取消上次验证结果</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#form&quot;</span>).data(<span class="string">&#x27;bootstrapValidator&#x27;</span>).destroy();<span class="comment">//销毁上次验证结果</span></span><br><span class="line">$(<span class="string">&#x27;#form&#x27;</span>).data(<span class="string">&#x27;bootstrapValidator&#x27;</span>,<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>（3）：启动kibana，进入[“192.168.16.11”]服务器的/opt/module/elk/kibana-4.3.1-linux-x64文件夹，并执行如下命令。该命令非后台启动，关闭服务器连接时使用exit命令，不要直接关闭窗口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;kibana &amp;</span><br></pre></td></tr></table></figure>
 
+<h3 id="2：访问测试"><a href="#2：访问测试" class="headerlink" title="2：访问测试"></a>2：访问测试</h3><p>使用浏览器访问如下几个地址，查看集群搭建状态。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.16.11:9200&#x2F;_plugin&#x2F;head&#x2F;</span><br><span class="line">http:&#x2F;&#x2F;192.168.16.11:9200&#x2F;_plugin&#x2F;kopf&#x2F;#!&#x2F;cluster</span><br><span class="line">http:&#x2F;&#x2F;192.168.16.11:5601&#x2F;</span><br></pre></td></tr></table></figure>
 
+<h3 id="3：关闭集群"><a href="#3：关闭集群" class="headerlink" title="3：关闭集群"></a>3：关闭集群</h3><p>（1）根据命令查询进程的pid</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep logstash</span><br><span class="line">netstat -tunlp | grep 5601</span><br><span class="line">ps -ef | grep elastic</span><br></pre></td></tr></table></figure>
+
+<p>（2）使用kill命令杀死进程，注意最后杀死elasticsearch进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 pid</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -549,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://it-xiaolang.github.io/2020/12/13/week1/">https://it-xiaolang.github.io/2020/12/13/week1/</a>
+                    <a href="https://it-xiaolang.github.io/2020/01/15/ELK2.X%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">https://it-xiaolang.github.io/2020/01/15/ELK2.X%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,8 +603,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%94%B6%E8%8E%B7%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">收获总结</span>
+                                <a href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
+                                    <span class="chip bg-color">集群部署</span>
+                                </a>
+                            
+                                <a href="/tags/ELK/">
+                                    <span class="chip bg-color">ELK</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">日志分析</span>
                                 </a>
                             
                         </div>
@@ -758,48 +782,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/13/week1/">
+                <a href="/2020/02/03/ELK7.X%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="week1">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="ELK7.X集群部署">
                         
-                        <span class="card-title">week1</span>
+                        <span class="card-title">ELK7.X集群部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对每周收获的总结
+                            ELK7.X集群部署
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%91%A8%E8%AE%B0/" class="post-category">
-                                    周记
+                            <a href="/categories/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/" class="post-category">
+                                    集群部署
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%94%B6%E8%8E%B7%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">收获总结</span>
+                    <a href="/tags/%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">集群部署</span>
+                    </a>
+                    
+                    <a href="/tags/ELK/">
+                        <span class="chip bg-color">ELK</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">日志分析</span>
                     </a>
                     
                 </div>
@@ -813,32 +843,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/06/hello-world/">
+                <a href="/2020/01/01/week2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="week2">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">week2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            对每周收获的总结
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            it-xiaolang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%91%A8%E8%AE%B0/" class="post-category">
+                                    周记
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%94%B6%E8%8E%B7%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">收获总结</span>
+                    </a>
+                    
                 </div>
                 
             </div>
